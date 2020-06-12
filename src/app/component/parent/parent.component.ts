@@ -9,12 +9,19 @@ import { ChildComponent } from '../child/child.component';
 })
 export class ParentComponent implements OnInit {
 
-  msg : string = 'Hello Message from Parent Componenet ';
+  msg : string = 'Hello Message from Parent Componenet !!';
   @ViewChild(ChildComponent) childComp;
+  childMsg : string=null;
+  childMsgOutput : string=null;
 
   constructor() { }
 
   ngOnInit() {
+    this.childMsg = this.childComp.childMsg;
+  }
+
+  dataFromChild(value:string){
+    this.childMsgOutput=value;
   }
 
 }

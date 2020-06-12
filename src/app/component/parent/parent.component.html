@@ -1,8 +1,10 @@
 <p>
-  parent works!
+  Parent Component!
 </p>
-{{childComp.childMsg}}
+{{childMsg}}
+<hr>
+{{childMsgOutput}}
 <div class="border border-danger m-4 p-2 col-md-5">
-  <app-child [MSG]="msg"></app-child>
+  <app-child [MSG]="msg" (childEvent)="dataFromChild($event)"></app-child>
 </div>
 
