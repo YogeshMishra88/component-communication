@@ -1,10 +1,15 @@
 <p>
   Parent Component!
 </p>
-{{childMsg}}
 <hr>
+{{childMsg}}
+<hr *ngIf="childMsgOutput">
 {{childMsgOutput}}
-<div class="border border-danger m-4 p-2 col-md-5">
+<hr>
+{{msgFromService}}
+<hr>
+<button class="btn btn-warning" (click)="changeServiceMessage()">Change Service MSG</button>
+<div class="border border-danger m-4 p-2 col-md-8">
   <app-child [MSG]="msg" (childEvent)="dataFromChild($event)"></app-child>
 </div>
 
